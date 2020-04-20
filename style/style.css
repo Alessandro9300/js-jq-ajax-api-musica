@@ -19,8 +19,22 @@ header{
 }
 
 .logo{
-  width: 1050px;
+  width: 800px;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  color: grey;
+  font-weight: 600;
+}
+
+.logo:hover{
+  cursor: pointer;
+}
+
+.logo div:active{
+  color: white;
 }
 
 header img {

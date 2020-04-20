@@ -14,27 +14,43 @@ $(document).ready(function(){
       var infoAlbums = data.response;
 
       for (var i = 0; i < infoAlbums.length; i++) {
-        console.log(infoAlbums[i].poster)
 
         var objHtml = {
           copertina: infoAlbums[i].poster,
           titolo: infoAlbums[i].title,
           gruppo: infoAlbums[i].author,
-          anno: infoAlbums[i].year
+          anno: infoAlbums[i].year,
+          genere: infoAlbums[i].genre
+
         }
-
         var html = template(objHtml);
-
         $(".container").append(html);
-
-
       }
 
+      $(".logo .genere").click(function(){
+
+        $(".container .box").hide();
+
+        var dataTitle = $(this).data().genere;
+        var selectedAttribute = $('[data-genere="' + dataTitle + '"]');
+
+        selectedAttribute.show()
+
+        // if (selectedAttribute.hasClass("active")){
+        //   $(".container .box").show();
+        //   selectedAttribute.removeClass("active")
+        // } else {
+        //     selectedAttribute.show().addClass("active");
+        //     selectedAttribute.removeClass("active");
+        // }
 
 
+      })
 
+      $(".all").click(function(){
+        $(".container .box").show();
+      })
 
-      console.log(infoAlbums[1].poster);
     },
     error: function(richiesta, stato, errori){
       alert(richiesta, stato, errori)
