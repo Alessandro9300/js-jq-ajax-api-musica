@@ -44,7 +44,6 @@ $(document).ready(function(){
         //     selectedAttribute.removeClass("active");
         // }
 
-
       })
 
       $(".all").click(function(){
